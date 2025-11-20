@@ -1,0 +1,372 @@
+/* Este es el archivo de estilos para el Portafolio Pro */
+/* Variables y tipografía global */
+:root{
+    --brand: #14324b;
+    --white: #ffffff;
+    --gold: #D4AF37;
+    --light: #f7f9fb;
+}
+html, body {
+    font-family: "Cascadia Code", monospace;
+}
+/* Estilos generales */
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 2.5rem;
+ }
+.seccion-oscura {
+    color: var(--white);
+    background-color: var(--brand);
+}
+.seccion-clara{
+    color: black;
+    background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
+}
+.seccion-oscura .seccion-descripcion{
+    color: white;
+}
+.seccion-titulo{
+    font-size: 2rem;
+    padding: 15px 0;
+}
+.seccion-descripcion{
+    font-size: 1.3rem;
+    color: #584e4e;
+}
+.texto-negro{
+    color: black;
+}
+.texto-blanco{
+    color: white;
+}
+.seccion-texto{
+    font-size: 1.4rem;
+}
+/* Estilos para la sección de NAVBAR */
+.navbar{
+    padding: 2rem;
+    background-color: var(--brand);
+}
+/* asegurar legibilidad de enlaces y toggler en navbar */
+.navbar a {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilos para el Heroe */
+.heroe{
+    background: linear-gradient(180deg, rgba(20,50,75,0.98) 0%, rgba(20,50,75,0.9) 100%);
+    min-height: 450px;
+    text-align: center;
+}
+.heroe-principal{
+    padding: 3rem;
+}
+.heroe-principal h1{
+    font-size: 2rem;
+    color: var(--gold);
+}
+.heroe-principal h2{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+.heroe-imagen-desarrollador{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+.heroe-imagen-inferior{
+    width: 400px;
+    height: auto;
+    border-radius: 15px 15px 0px 0px;
+}
+
+/* Estilos para el sobre mi */
+.sobre-mi{
+    height: 500px;
+    padding: 10px;
+
+}
+.sobre-mi .contenedor{
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Experiencia */
+.experiencia{
+    padding: 40px 40px 60px 40px;
+}
+.experiencia .columna{
+    padding: 20px;
+    border: 3px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease-in;
+}
+.experiencia .columna:hover{
+    color: var(--white);
+    background-color: var(--brand);
+}
+.experiencia i{
+    font-size: 2.5rem;
+    color: var(--gold);
+    background-color: transparent;
+    padding: 8px 19px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+}
+.experiencia-titulo{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.badge-contenedor {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.badge{
+    margin: 5px;
+    background-color: transparent;
+    color: var(--gold);
+    border: 1px solid var(--brand);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+}
+/* Proyectos */
+.proyectos-recientes{
+    padding: 40px;
+}
+.proyectos-contenedor{
+    padding-top: 60px;
+    margin-bottom: 40px;
+}
+.proyecto{
+    position: relative;
+    color: var(--gold);
+}
+.proyectos-recientes img{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    transition: all 0.2s ease;
+}
+.proyecto:hover img{
+    opacity: 0.2;
+}
+.proyecto:hover .sobrepuesto{
+    opacity: 1;
+}
+.sobrepuesto{
+    transition: all 0.2s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.sobrepuesto p{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.sobrepuesto .iconos-contenedores{
+    display: flex;
+}
+.sobrepuesto i{
+    color: var(--gold);
+    font-size: 60px;
+    margin: 10px;
+}
+/* Testimonios Carrusel */
+.testimonios{
+    padding: 40px 40px 80px 40px;
+}
+.testimonios .carousel{
+    max-width: 800px;
+}
+.carousel-item{
+    height: 500px;
+}
+.carousel-item .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.testimonio-imagen{
+    height: 150px;
+    width: 150px;
+    margin: 10px 10px 20px 10px;
+}
+
+.testimonio-texto{
+    max-width: 70%;
+    font-size: 20px;
+    text-align: center;
+    font-family: inherit;
+}
+.testimonio-info{
+    font-weight: bold;
+    text-align: center;
+}
+.testimonio-info p{
+    margin-bottom: 0;
+}
+.testimonio-info .cliente{
+    font-size: 1.2rem;
+}
+.testimonio-info .cargo{
+    font-size: 0.9rem;
+    color: #656060;
+}
+
+/* Contacto */
+.contacto .container {
+    max-width: 1100px;
+    min-height: 200px;
+    padding: 20px;
+}
+.contacto .rectangulo {
+    margin-top: -5rem;
+    background-color: var(--gold);
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.12);
+    border: 2px solid var(--brand)
+}
+.contacto .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.contacto .description {
+    color: white;
+    font-size: 1.2rem;
+}
+.contacto button {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid var(--brand);
+    padding: 1.25rem 2em;
+    margin: 10px;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+}
+.contacto button:hover{
+    background-color: var(--brand);
+    color: var(--white);
+}
+.contacto button i {
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
+}
+.contacto button:hover i{
+    color: var(--white);
+}
+/* pie de pagina */
+footer{
+    min-height: 500px;
+}
+.footer-logo{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+}
+.footer-texto{
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-family: inherit;
+}
+.iconos-redes-sociales a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+.iconos-redes-sociales i {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+.iconos-redes-sociales a:hover {
+    background-color: white;
+    border: 2px solid var(--gold);
+}
+.iconos-redes-sociales a:hover i {
+    color: var(--brand);
+}
+.derechos-de-autor{
+    font-size: 15px;
+    color: #aeaeae;
+    padding: 20px;
+}
+#pinguino{
+    font-size: 100px;
+    color: var(--brand);
+}
+/* normalizar etiquetas <i> para evitar estilos globales inesperados */
+i{
+    font-size: 1rem;
+    color: inherit;
+}
+
+/* estilos de foco accesible */
+a:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.18);
+    border-radius: 6px;
+}
+/* responsividad */
+@media  screen and (max-width: 767px) {
+    .navbar-brand{
+        display:none;
+    }
+}
+@media screen and (max-width: 700px) {
+    .hero-inferior-imagen{
+        max-width: 600px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .overlay p{
+        font-size: 18px;
+    }
+    .overlay i {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 800px){
+    .testimonio-imagen{
+        height: 120px;
+        width: 120px;
+    }
+    .testimonio-texto{
+        font-size: 18px;
+    }
+}
