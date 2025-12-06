@@ -98,10 +98,12 @@ h1{
 
 }
 .sobre-mi .contenedor{
-    max-width: 600px;
+    max-width: 1000px;
     text-align: center;
 }
-
+.sobre-mi h2{
+    color: var(--gold);
+} 
 /* Experiencia */
 .experiencia{
     padding: 40px 40px 60px 40px;
