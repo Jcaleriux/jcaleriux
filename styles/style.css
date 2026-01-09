@@ -1,13 +1,15 @@
 /* Este es el archivo de estilos para el Portafolio Pro */
 /* Variables y tipografía global */
 :root{
-    --brand: #14324b;
+    --brand: #02010A;
     --white: #ffffff;
     --gold: #D4AF37;
     --light: #f7f9fb;
+    --d_blue: #0a1c30;
+    --low_blue: #143560;
 }
 html, body {
-    font-family: "Cascadia Code", monospace;
+    font-family: sans-serif, monospace;
 }
 /* Estilos generales */
 section{
@@ -26,7 +28,7 @@ h1{
 }
 .seccion-clara{
     color: black;
-    background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
+    background: linear-gradient(180deg, var(--white) 0%, var(--brand) 100%);
 }
 .seccion-oscura .seccion-descripcion{
     color: white;
@@ -65,7 +67,7 @@ h1{
 
 /* Estilos para el Heroe */
 .heroe{
-    background: linear-gradient(180deg, rgba(20,50,75,0.98) 0%, rgba(20,50,75,0.9) 100%);
+    background: linear-gradient(180deg, var(--brand) 0%, var(--white) 280%);
     min-height: 450px;
     text-align: center;
 }
