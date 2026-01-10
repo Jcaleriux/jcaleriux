@@ -24,11 +24,19 @@ h1{
  }
 .seccion-oscura {
     color: var(--white);
-    background-color: var(--brand);
+    background: linear-gradient(180deg, var(--low_blue) 0%, var(--brand) 100%);
 }
 .seccion-clara{
-    color: black;
-    background: linear-gradient(180deg, var(--white) 0%, var(--brand) 100%);
+    color: var(--light);
+    background: linear-gradient(180deg, var(--brand) 0%, var(--low_blue) 100%);
+}
+.seccion-proyectos{
+    color: var(--light);
+    background: linear-gradient(180deg, var(--low_blue) 0%, var(--brand) 100%);
+}
+.seccion-contacto{
+    color: var(--light);
+    background: linear-gradient(180deg, var(--brand) 0%, var(--brand) 100%);
 }
 .seccion-oscura .seccion-descripcion{
     color: white;
@@ -36,10 +44,11 @@ h1{
 .seccion-titulo{
     font-size: 2rem;
     padding: 15px 0;
+    color: var(--gold);
 }
 .seccion-descripcion{
     font-size: 1.3rem;
-    color: #584e4e;
+    color: var(--light);
 }
 .texto-negro{
     color: black;
@@ -67,7 +76,7 @@ h1{
 
 /* Estilos para el Heroe */
 .heroe{
-    background: linear-gradient(180deg, var(--brand) 0%, var(--white) 280%);
+    background: linear-gradient(180deg, var(--brand) 0%, var(--low_blue) 100%);
     min-height: 450px;
     text-align: center;
 }
@@ -184,17 +193,14 @@ h1{
     text-align: center;
 }
 .sobrepuesto p{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 0;
-}
-.sobrepuesto .iconos-contenedores{
-    display: flex;
 }
 .sobrepuesto i{
     color: var(--gold);
     font-size: 60px;
-    margin: 10px;
+    margin: 5px;
 }
 /* Testimonios Carrusel */
 .testimonios{
@@ -252,19 +258,14 @@ h1{
     background-color: var(--gold);
     border-radius: 10px;
     box-shadow: 0px 1px 4px 1px rgba(0,0,0,0.12);
-    border: 2px solid var(--brand)
-}
-.contacto .row {
-    width: 100%;
-    display: flex;
-    align-items: center;
+    border: 2px solid var(--brand);
 }
 .contacto .description {
     color: white;
     font-size: 1.2rem;
 }
 .contacto button {
-    color: white;
+    color: var(--brand);
     font-weight: bold;
     background-color: transparent;
     border: 2px solid var(--brand);
@@ -278,21 +279,20 @@ h1{
     color: var(--white);
 }
 .contacto button i {
-    color: white;
+    color: var(--brand);
     font-size: 1.3rem;
     transition: all 0.2s ease-in-out;
 }
 .contacto button:hover i{
-    color: var(--white);
+    color: var(--gold);
 }
 /* pie de pagina */
 footer{
     min-height: 500px;
 }
 .footer-logo{
-    height: 80px;
-    width: 80px;
-    margin: 10px;
+    height: 250px;
+    margin: 20px;
 }
 .footer-texto{
     font-size: 1.5rem;
