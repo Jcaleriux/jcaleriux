@@ -6,11 +6,11 @@ if (cube) {
     let frameId = 0;
 
     const animate = () => {
-        orbitAngle += prefersReducedMotion ? 0.0035 : 0.012;
+        orbitAngle += prefersReducedMotion ? 0.0025 : 0.008;
 
-        const rotateX = -20 + Math.sin(orbitAngle * 0.7) * 5;
-        const rotateY = orbitAngle * 28;
-        const rotateZ = Math.sin(orbitAngle * 0.45) * 2.5;
+        const rotateX = -26 + Math.sin(orbitAngle * 0.9) * 3.5;
+        const rotateY = 38 + Math.cos(orbitAngle * 0.75) * 16;
+        const rotateZ = Math.sin(orbitAngle * 0.55) * 1.6;
 
         cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
         frameId = window.requestAnimationFrame(animate);

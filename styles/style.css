@@ -27,7 +27,8 @@ body {
         radial-gradient(circle at 18% 18%, rgba(212, 175, 55, 0.10), transparent 28%),
         radial-gradient(circle at 78% 24%, rgba(72, 135, 229, 0.22), transparent 24%),
         linear-gradient(145deg, var(--bg-start) 0%, var(--bg-mid) 48%, var(--bg-end) 100%);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 a {
@@ -99,6 +100,7 @@ a {
     text-align: center;
     justify-content: center;
     gap: 0.95rem;
+    padding-inline: 1rem;
 }
 
 .eyebrow {
@@ -140,7 +142,7 @@ a {
     margin-top: clamp(1.2rem, 3vw, 2rem);
     display: grid;
     place-items: center;
-    perspective: 1200px;
+    perspective: 1500px;
 }
 
 .cube-shadow {
@@ -160,6 +162,7 @@ a {
     width: var(--cube-size);
     height: var(--cube-size);
     transform-style: preserve-3d;
+    transform-origin: center center;
     will-change: transform;
     filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.14));
 }
@@ -168,10 +171,11 @@ a {
     position: absolute;
     inset: 0;
     border: 2px solid rgba(255, 255, 255, 0.95);
-    background: rgba(255, 255, 255, 0.015);
+    background: rgba(255, 255, 255, 0.02);
     box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.06),
         0 0 24px rgba(255, 255, 255, 0.05);
+    backface-visibility: hidden;
     backdrop-filter: blur(2px);
 }
 
@@ -253,6 +257,16 @@ a {
     transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
 }
 
+.face-right,
+.face-left {
+    background: rgba(255, 255, 255, 0.012);
+}
+
+.face-top,
+.face-bottom {
+    background: rgba(255, 255, 255, 0.01);
+}
+
 .version-pill {
     position: fixed;
     right: 1.25rem;
@@ -314,64 +328,154 @@ a {
 }
 
 @media (max-width: 900px) {
-    body {
-        overflow: auto;
-    }
-
     .page-shell {
         min-height: 100svh;
-        padding: 5.75rem 1.25rem 9.75rem;
+        padding: 6.25rem 1.25rem 10.5rem;
     }
 
     .hero {
         gap: 1rem;
-        min-height: calc(100svh - 12rem);
+        min-height: auto;
+        width: min(100%, 40rem);
     }
 
     .hero h1 {
         max-width: 10.5ch;
+        font-size: clamp(2rem, 7vw, 4rem);
+    }
+
+    .cube-stage {
+        width: min(62vw, 18rem);
     }
 }
 
 @media (max-width: 640px) {
-    .eyebrow {
-        letter-spacing: 0.14em;
+    .page-shell {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        min-height: 100svh;
+        padding: 5.5rem 1rem 1.25rem;
+        gap: 1.5rem;
     }
 
     .brand-mark {
-        top: 1rem;
-        left: 1rem;
+        top: 0.9rem;
+        left: 0.9rem;
+    }
+
+    .brand-mark img {
+        width: clamp(8rem, 42vw, 10rem);
+    }
+
+    .hero {
+        min-height: 0;
+        width: 100%;
+        flex: 1;
+        justify-content: center;
+        gap: 1rem;
+        padding-inline: 0.25rem;
+    }
+
+    .hero h1 {
+        max-width: 11ch;
+        font-size: clamp(2rem, 10.5vw, 3.35rem);
+        line-height: 1.03;
+        letter-spacing: -0.045em;
     }
 
     .hero-copy {
-        max-width: 30rem;
+        max-width: 26rem;
+        font-size: 0.98rem;
+        line-height: 1.5;
     }
 
     .cube-stage {
-        width: min(72vw, 19rem);
+        width: min(68vw, 15rem);
+        margin-top: 0.75rem;
     }
 
-    .version-pill {
-        right: 0.9rem;
-        bottom: 0.9rem;
-        max-width: calc(100vw - 1.8rem);
+    .cube {
+        --cube-size: clamp(6.5rem, 28vw, 8.75rem);
     }
 
     .social-footer {
-        gap: 0.85rem;
+        position: static;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        gap: 0.75rem;
+        margin-top: auto;
     }
 
     .social-links {
-        gap: 0.8rem;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .social-links a {
-        width: 3rem;
-        height: 3rem;
+        width: 2.85rem;
+        height: 2.85rem;
     }
 
     .social-links i {
-        font-size: 1.32rem;
+        font-size: 1.2rem;
+    }
+
+    .social-copy {
+        font-size: 0.82rem;
+        text-align: center;
+    }
+
+    .version-pill {
+        position: static;
+        align-self: center;
+        margin-top: 0.25rem;
+        max-width: 100%;
+        padding: 0.75rem 0.95rem;
+    }
+
+    .version-legacy {
+        max-width: none;
+        color: rgba(255, 255, 255, 0.64);
+    }
+}
+
+@media (max-width: 420px) {
+    .page-shell {
+        padding: 5.15rem 0.85rem 1rem;
+        gap: 1.25rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.8rem, 10vw, 2.75rem);
+        max-width: 11.5ch;
+    }
+
+    .hero-copy {
+        max-width: 22rem;
+        font-size: 0.92rem;
+    }
+
+    .cube-stage {
+        width: min(72vw, 13rem);
+    }
+
+    .social-links a {
+        width: 2.65rem;
+        height: 2.65rem;
+    }
+
+    .version-pill {
+        gap: 0.55rem;
+        font-size: 0.85rem;
+    }
+
+    .version-current,
+    .version-legacy {
+        font-size: 0.82rem;
     }
 }
 
