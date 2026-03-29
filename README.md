@@ -1,9 +1,8 @@
 - 👋 Hi, I’m Jose Calero @Jcaleriux 
 - 👀 I’ve been interested in the entire field of informatics, from hardware to software. I’m passionate about learning almost anything related to technology.
 However, there’s so much out there that it’s impossible to learn it all. I’ve been focusing on programming, server administration, and networking.
-- 🌱 I’m currently learning Django, Vue.js, SQL, and Linux as I work on developing my personal project, FactuNet-App.
+- 🌱 I’m currently learning...
 - 📫 You can reach me on Linkedln at: https://www.linkedin.com/in/josearamirezcalero
-- 😄 My friends call me Calero.
 
 
 <!---
